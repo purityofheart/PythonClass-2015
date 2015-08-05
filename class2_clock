@@ -1,0 +1,39 @@
+class Clock(object):
+    def __init__(self, hour, minutes=0):
+        self.minutes = minutes
+        self.hour = hour
+    def __str__(self):
+  		return "%02d:%02d" % (self.hour,self.minutes)
+
+    @classmethod
+    def at(cls, hour, minutes=0):
+        return cls(hour, minutes)
+    
+    def __add__(self,added_minutes):
+    	new_minutes=self.minutes+added_minutes
+    	updated_minutes=new_minutes-(60*(new_minutes/60))
+    	updated_hour=self.hour+new_minutes/60
+    	return Clock(updated_hour,updated_minutes)
+    	
+    def __add__(self,added_minutes):
+    	new_minutes=self.minutes+added_minutes
+    	updated_minutes=new_minutes-(60*(new_minutes/60))
+    	updated_hour=self.hour+new_minutes/60
+    	if updated_hour>=24:
+    	   updated_hour=updated_hour-24
+    	return Clock(updated_hour,updated_minutes)
+    
+
+        
+myclock=Clock(8)
+print myclock
+
+print myclock+61
+
+myclock2=Clock(23,30)
+print myclock2+ 60
+
+print Clock(23,30) + 60
+
+
+   
