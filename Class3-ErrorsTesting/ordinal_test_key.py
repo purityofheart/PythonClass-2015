@@ -37,8 +37,8 @@ class OrdinalTest(unittest.TestCase):
     self.assertEqual("1st", ordinal(1.0))
 
   def test_string_input(self):
-    self.assertEqual("1st", ordinal("1"))
-    self.assertEqual("Improper input", ordinal("abc"))
+    with self.assertRaises(TypeError):	
+    	ordinal("b")
 
 if __name__ == '__main__':
   unittest.main()

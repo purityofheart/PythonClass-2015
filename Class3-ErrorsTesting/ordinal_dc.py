@@ -2,7 +2,7 @@ def ordinal(n):
     try:
         n = int(n)
     except:
-        return "Not a valid input"
+        raise TypeError
     n=str(n)
     endings = {'1':'st', '2':'nd', '3':'rd'}
     if n[-2:-1] == '1': return n+'th'
