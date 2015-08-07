@@ -1,0 +1,14 @@
+def print_integer(integer):
+	
+		if integer==11 or integer==12 or integer==13:
+			return str(integer) + "th"	
+		if integer % 10==1:
+			return str(integer) + "st"
+		if integer % 10==2:
+			return str(integer) + "nd"
+		if integer % 10==3:
+			return str(i) + "rd"
+	        else:
+		        return str(integer) + "th"
+		        
+				
