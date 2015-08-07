@@ -1,0 +1,17 @@
+import unittest 
+import ordinal
+
+class mytest(unittest.TestCase):
+
+  def test_st(self):
+    	self.assertEqual("11th", ordinal.print_integer(11))
+
+  def test_nd(self):
+    	self.assertEqual("12th", ordinal.print_integer(12))
+
+  def test_rd(self):
+    	self.assertEqual("13th", ordinal.print_integer(13))
+
+
+if __name__ == '__main__': 
+  unittest.main()
