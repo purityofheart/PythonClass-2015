@@ -80,13 +80,13 @@ def print_integer(integer):
 	try:
 		if integer %1==0:
 			print "Congratulations! You entered an integer!"
-		elif integer %>1:
+		else:
 			raise CustomException(integer%1)
 	except CustomException as e:
 		raise TypeError, "Your number has a decimal: %.2f" %e.value
 	except TypeError:
 # 		pass
-		print "Enter a number!"
+		raise TypeError, "Enter a number!"
 	else:
 		return "Here is my integer: " + str(integer)
 	finally:
