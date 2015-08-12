@@ -1,6 +1,6 @@
 #Register an app: https://dev.twitter.com/
 
-#pip install tweepy
+#sudo pip install tweepy
 import tweepy
 import time
 
@@ -10,6 +10,10 @@ import time
 #Get access to API
 auth = tweepy.OAuthHandler('your consumer key', 'your consumer secret')
 auth.set_access_token('your access token', 'your access token secret')    
+api = tweepy.API(auth)
+
+auth = tweepy.OAuthHandler('iqV1enLOe7t7vrspEnTBdmB8n', '4kyXE5YHTqPcoDe5rYCQG24mTe0I8lHObuACkFF8RFzwd07K1J')
+auth.set_access_token('164546388-X5vsChPUKrcEnS3YRxbsgG72AeeSyBJhdMZJGQO7', 'vDXP5WoJ5mEpvhXgaRcde5gn7BO9ZnMbrJqwGqeO6aJap')    
 api = tweepy.API(auth)
 
 #See rate limit
@@ -36,9 +40,10 @@ betuld.statuses_count
 #Check her followers
 betuld.followers_count
 betuld.followers() #creates a list of user objects - only the first 20!
-api.followers(betuld,count=200) #creates a list of user objects - can get up to 200
+api.followers(betuld.id,count=200) #creates a list of user objects - can get up to 200
 
 betuld.followers_ids() #creates a list of user ids - up to 5000
+api.followers_ids('BetulD_')
 
 for follower_id in betuld.followers_ids():
 	user = api.get_user(follower_id)
@@ -48,6 +53,7 @@ for follower_id in betuld.followers_ids():
 
 #Get the first 2 "pages" of follower ids
 krugmans_followers=[]
+
 for page in tweepy.Cursor(api.followers_ids, 'NYTimeskrugman').pages(2):
     krugmans_followers.extend(page)
     time.sleep(60)
@@ -56,8 +62,9 @@ for page in tweepy.Cursor(api.followers_ids, 'NYTimeskrugman').pages(2):
 krugmans_followers=[]
 
 for item in tweepy.Cursor(api.followers_ids, 'NYTimeskrugman').items(6000):
+	print item
 	krugmans_followers.append(item)
 	time.sleep(1)
-
+	
 
 
