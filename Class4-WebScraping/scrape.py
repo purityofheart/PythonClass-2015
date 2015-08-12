@@ -1,10 +1,12 @@
 #Install beautiful soup
 #$ easy_install beautifulsoup4
-#$ pip install beautifulsoup4
+#$ easy_install pip
+#$ sudo pip install beautifulsoup4
 
 
 from bs4 import BeautifulSoup
 import urllib2 
+import random
 import time
 import os
 
@@ -42,6 +44,10 @@ mysection.find_all('a') #Gives the list of all 'a' tags within the 'div' tag
 
 mysection.contents #Gives a list of all children
 mysection.children #Creates an iterator for children
+
+for child in mysection.children:
+	print child
+
 mysection.descendants #Creates an iterator for children, grandchildren, etc.
 
 # Other methods to check family:
@@ -72,9 +78,5 @@ with open('Docket05-1.html') as f:
   
 soup = BeautifulSoup(myfile)
 soup.prettify()
-
-
-
-
 
 

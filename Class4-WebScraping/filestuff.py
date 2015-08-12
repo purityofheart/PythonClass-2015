@@ -5,7 +5,7 @@ with open('readfile.txt') as f:
   #We can read files in chunks
   the_whole_thing = f.read()
   print "The Whole Thing\n***\n{0}".format(the_whole_thing)
-  
+
   #We can read files line by line
   print "\nLooping over lines\n****\n"
   f.seek(0)
@@ -38,7 +38,7 @@ with open('writefile.txt', 'w') as f:
   #wipes the file clean and opens it
   f.write("Hi guys.")
   f.write("Does this go on the second line?")
-  f.writelines(['a', 'b', 'c'])
+  f.writelines(['a\n', 'b\n', 'c\n'])
   # f.flush() # If using the file object interactively you may need to flush the buffer
 
 with open('writefile.txt', 'a') as f:

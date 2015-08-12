@@ -8,7 +8,8 @@
 # 	-Web page
 	
 from bs4 import BeautifulSoup
-import urllib2 
+import urllib2
+import csv 
 
 web_address='https://polisci.wustl.edu/faculty/specialization'
 web_page = urllib2.urlopen(web_address)

@@ -6,7 +6,7 @@ my_writer = csv.writer(f)
 
 for i in range(1, 100):
   my_writer.writerow([i, i-1])
-  
+   
 f.flush()
 f.close()
 
@@ -22,9 +22,11 @@ with open('test_with_fields.csv', 'wb') as f:
   my_writer.writeheader()
   for i in range(1, 100):
     my_writer.writerow({"B":i, "A":i-1})
+    
+    
 
 #Now lets read some things
-with open('test1.csv', 'rb') as f:
+with open('test.csv', 'rb') as f:
   print "Reading test1.csv"
   my_reader = csv.reader(f)
   for row in my_reader:
