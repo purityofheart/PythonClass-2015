@@ -1,0 +1,26 @@
+#Exercise 1
+#Write a function to calculate the greatest common divisor of two numbers
+
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+gcd(20,8)
+
+#Exercise 2
+#Write a function that returns prime numbers less than 121
+
+def findprime(num):
+	if num >1:
+		for i in range(2,num):
+			if num % i == 0:
+        		return None
+    	return num
+    else:
+    	return None
+
+list = []
+for i in range(1,121):
+	if findprime(i):   # check if it is None
+	list.append(findprime(i))
