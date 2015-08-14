@@ -1,5 +1,5 @@
 #Exercise 1
-#Write a function to calculate the common divisor of two numbers
+#Write a function to calculate the greatest common divisor of two numbers
 
 #Exercise 2
 #Write a function that returns prime numbers less than 121
